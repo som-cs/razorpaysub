@@ -1,0 +1,23 @@
+{
+  "name": "razorpaysub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "razorpay": "^2.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/som-cs/razorpaysub.git"
+  },
+  "author": "awws0m",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/som-cs/razorpaysub/issues"
+  },
+  "homepage": "https://github.com/som-cs/razorpaysub#readme"
+}
