@@ -6,6 +6,23 @@ const razorInstance = new Razorpay({
   key_secret: process.env.RAZORPAY_SECRET_KEY,
 });
 
+/**
+ * creates a plan. Needed to create subscription
+ * URL: http://127.0.0.1:8001/plans/create
+ * METHOD: PUT
+ * BODY: {
+    "period": "weekly",
+    "interval": 1,
+    "name": "Test plan - Weekly",
+    "amount": 5000,
+    "description": "Description for the test plan is superb"
+}
+ * documentation: https://razorpay.com/docs/v2/beta/api/payments/subscriptions#create-a-plan
+ *
+ * @param req
+ * @param res
+ */
+
 const addNewPlan = (req, res) => {
   const currency = 'INR';
   const {
@@ -29,6 +46,22 @@ const addNewPlan = (req, res) => {
 	  });
 };
 
+/**
+ * json of all the plans
+ * if you pass planId, returns only single plan info
+ * URL: http://127.0.0.1:8001/plans/get?planId=plan_J83ILjYQo2NVHy
+ * METHOD: GET
+ * documentation: https://razorpay.com/docs/v2/beta/api/payments/subscriptions#fetch-a-plan-by-id
+ *
+ * if you DO NOT pass planId, returns all the plans
+ * URL: http://127.0.0.1:8001/plans/get
+ * METHOD: GET
+ * documentation: https://razorpay.com/docs/v2/beta/api/payments/subscriptions#fetch-all-plans
+ *
+ *
+ * @param req
+ * @param res
+ */
 const getPlan = (req, res) => {
   const planId = req.query.planId || null;
   if (planId) {
